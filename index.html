@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Narrative Visualization</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Including styles of reveal.js library -->
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/solarized.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <section data-state="hid">
+          <h3>BASIC INSIGHTS INTO WORLD STOCK MARKET</h3>
+          <h3>A SHORT JOURNEY TO THE FINANCIAL WORLD</h3>
+          <small>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>Author:</strong> Ron Krasik</td>
+                  <td>
+                    <a href="mailto:rkrasik2@illinois.edu">rkrasik2@illinois.edu</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>CS 498:</strong> Data Visualization</td>
+                  <td>Summer 2018</td>
+                </tr>
+                <tr>
+                  <td colspan="2">University of Illinois at Urbana-Champaign (UIUC)</td>
+                </tr>
+              </tbody>
+            </table>
+          </small>
+        </section>
+
+        <section data-state="hid">
+          <h2>About the Visualization</h2>
+          <small>
+            <p>
+              This, CS 498 Data Visualization, d3.js final project uses the hybrid approach of an Interactive Slideshow in order to narrate
+              the visual story of Financial Market dataset (FINVIZ.COM). The interactive slideshow takes the user through
+              the Dataset of the July 09 2018 Single Trading Day (mode details to follow).
+            </p>
+            <p>
+              The Interactive Slideshow is built on scenes with annotations having parameters connected with triggers and constantly follows
+              a template for visual consistency. Specifics with regards all these elements will be detailed later on in the
+              presentation.
+            </p>
+            <p>
+              Recommended Settings: As the visualizations use a preset static canvas of 1024x768 pixels, the viewing size of the Interactive
+              Slideshow is at least 1280x800 pixels in order to accommodate the surrounding text and scene elements.(FINVIZ.COM).
+              The interactive slideshow takes the user through the Dataset of the July 09 2018 Single Trading Day (mode details
+              to follow).
+            </p>
+          </small>
+        </section>
+
+        <section data-state=hid>
+          <h4>ELEMENTS OF NARRATION</h4>
+          <small class="less-font">
+            <ol>
+              <li class="fragment" data-fragment-index="1">
+                <strong>Scenes</strong>
+              </li>
+              <p class="fragment" data-fragment-index="2">
+                The slides that make up the presentation; these slides can be navigated through guiding arrows in the
+                <img src="images/arrow.png" style="border: none; background:none; box-shadow:none; margin: 8px 0 0 0;" height="8" width="8"> corner. The use of CSS and FullPage.js allows for a consistent template look for the Interactive Slideshow
+                visualization; each page is transitioned using the same method, while the elements are kept the same - both
+                font size and family.
+
+                <br>Additionally, there is a page navigation control (on the right bottom side) which allows users to navigate
+                between different slides. User can press
+                <em>
+                  <strong>Esc</strong>
+                </em> key at any point of the Interactive Slideshow to get an overview of all scenes.
+              </p>
+              <li class="fragment" data-fragment-index="3">
+                <strong>Annotations</strong>
+              </li>
+              <p class="fragment" data-fragment-index="4">Various
+                <strong>tooltips</strong>,
+                <strong>labels</strong> &
+                <strong>legends</strong>; that display key attributes from the Dataset - such as Company, Country, Market Capitalization
+                and Sector. The tooltips are triggered when a user interactively moves the mouse over the visualization elements
+                and this invokes the display parameters for the each relevant item.</p>
+              <p class="fragment" data-fragment-index="4">In general, the annotations that are being used in the visualizations all have a similar process of using triggers
+                to change the hidden parameter of the annotation. For example, the
+                <strong>INTERACTIVE ANALSYSIS OF THE WORLD</strong> chart has an initial state of the hidden parameter which controls
+                the display of the annotations set to false. As a user triggers changes to the chart parameters, it also
+                changes this hidden parameter to true. In turn the annotations disappear until the user resets chart to default
+                - thus zooming out back to the default visualization parameters.
+              </p>
+              <li class="fragment" data-fragment-index="5">
+                <strong>Parameters</strong>
+              </li>
+              <p class="fragment" data-fragment-index="6">The main parameters of this story are
+                <strong>Company</strong>,
+                <strong>Sector</strong>,
+                <strong>Market Capitalization </strong> and
+                <strong>Country</strong>. There are additional parameters that are listed in the
+                <strong>Dataset</strong>, yet those are minor.</p>
+              <li class="fragment" data-fragment-index="7">
+                <strong>Triggers</strong>
+              </li>
+              <p class="fragment" data-fragment-index="8">
+                <strong>Zoom and Brush</strong> filter,
+                <strong>buttons</strong> with affordances are used in order to trigger updates in visuals based on new parameters.</p>
+              <p class="fragment" data-fragment-index="8">
+                Both parameters and triggers are intensively used in all of the visualizations, with an emphasis on the
+                <strong>INTERACTIVE ANALSYSIS OF THE WORLD</strong> and
+                <strong>MAJOR COMPANIES INTERACTIVE INSIGHTS</strong> charts. For example – in
+                <strong>INTERACTIVE ANALSYSIS OF THE WORLD
+                </strong> parameters for the (x, y) coordinates of each Bubble are set to an initial central position for
+                the
+                <strong>All Companies Visualization</strong>. As the user selects various grouping options (Sector, Country and Market
+                Capitalization) it triggers the change of the Bubble’s (x, y) coordinates parameter to their respective groupings.
+                In the
+                <strong>MAJOR COMPANIES INTERACTIVE INSIGHTS</strong> Sunburst Visualization, every mouse click on a region is a
+                trigger for the path and arc parameters. By clicking within a region, you can zoom into the data to take
+                a look at the information underneath. Clicking the central circle will trigger the parameters to return to
+                its values one up in the hierarchy.
+              </p>
+            </ol>
+          </small>
+        </section>
+
+        <section data-state="vis">
+          <h5 style="margin-bottom: 0;">THE DATASET</h5>
+          <small class="less-font">
+            <ol>
+              <p>
+                With approximately 10,000 companies, The FINVIZ.COM is considered as one of major financial data providers, it searches through
+                large amount of stock data and collects them in a single source.
+              </p>
+              <p>
+                Relevant stock exchanges (where the company is listed) - all stocks listed on: National Association of Securities Dealers
+                Automated Quotation (NASDAQ), New York Stock Exchange (NYSE) and American Stock Exchange (AMEX) are available.
+              </p>
+              <p>
+                Snapshot data: July 09, 2018 (Single Day performance). The data was slightly cleaned and pre-processed using common data
+                curation activities
+              </p>
+              <li class="fragment" data-fragment-index="1">
+                <strong>Sector</strong>
+              </li>
+              <p class="fragment" data-fragment-index="1">
+                Companies are divided into several groups - sectors - according to their business activities.
+              </p>
+              <li class="fragment" data-fragment-index="2">
+                <strong>Industry</strong>
+              </li>
+              <p class="fragment" data-fragment-index="2">
+                Companies in a common sector are further divided by products and services into smaller groups - industries.
+              </p>
+              <li class="fragment" data-fragment-index="3">
+                <strong>Country</strong>
+              </li>
+              <p class="fragment" data-fragment-index="3">
+                The geographic location of a company (listed on U.S. markets).
+              </p>
+              <li class="fragment" data-fragment-index="4">
+                <strong>Market Capitalization (Cap)</strong>
+              </li>
+              <p class="fragment" data-fragment-index="4">
+                The total dollar value of all of a company's outstanding shares. Market capitalization is a measure of corporate size.
+              </p>
+              <li class="fragment" data-fragment-index="5">
+                <strong>P/E</strong>
+              </li>
+              <p class="fragment" data-fragment-index="5">
+                A popular valuation ratio of a company's current share price compared to its per-share earnings (trailing twelve months).
+                Low P/E value indicates a stock is relatively cheap compared to its earnings. </p>
+              <li class="fragment" data-fragment-index="6">
+                <strong>Price</strong>
+              </li>
+              <p class="fragment" data-fragment-index="6">
+                The current stock price or the close price during the last trading session.
+              </p>
+              <li class="fragment" data-fragment-index="7">
+                <strong>Change</strong>
+              </li>
+              <p class="fragment" data-fragment-index="7">
+                The difference, in %, between current close and previous close price.
+              </p>
+              <li class="fragment" data-fragment-index="8">
+                <strong>Volume</strong>
+              </li>
+              <p class="fragment" data-fragment-index="8">
+                Total number of shares traded for a given stock today, or during the last trading session.
+              </p>
+            </ol>
+          </small>
+        </section>
+
+      </section>
+
+      <section data-state="vis">
+        <h5>WORLD VIEW - MARKET CAPITALIZATION BY COUNTRY</h5>
+        <small>
+          <p class="marginTop">The below Bubble Chart presents summary of Market Capitalization of all the companies in the dataset, grouped by
+            the relevant Country. Each Bubble shows #Companies, Country Name and summary of Market Capitalization (of all the
+            companies in that Country)</p>
+        </small>
+        <div class="bubble-chart"></div>
+      </section>
+
+      <section data-state="hid">
+        <section>
+          <h5>WORLD VIEW - MARKET CAPITALIZATION BY SECTOR</h5>
+          <small>
+            <p class="marginTop" style="width: 1160px; margin-left: -100px;">The below Bar Chart presents summary of Market Capitalization of all the companies in the dataset, grouped by the
+              relevant Sector. Each Bar shows Sector, #Companies and summary of Market Capitalization (of all the companies
+              in that Sector). The Bars are organized in descending order, from the top Market Capitalization to the bottom
+              (left to right)</p>
+          </small>
+          <div class="bar-chart"></div>
+        </section>
+
+        <section data-state="leftHid">
+          <small>The companies were categorized into four categories -
+            <strong>Default</strong>, by
+            <strong>Country</strong>, by
+            <strong>Sector</strong> and by
+            <strong>Market Capitalization</strong>
+            (special categorization was applied).
+            <p>Following visualization shows various distribution grouping.</p>
+          </small>
+        </section>
+
+      </section>
+
+      <section>
+
+        <section data-state="leftVis">
+          <h5>Interactive Analysis of the World</h5>
+          <small>
+            <p class="marginTop" style="width: 1070px;margin-left: -50px;">The below interactive Bubble Chart presents various views of all the companies in the dataset – all (default), by Country, by Sector and by Market Capitalization range. Please use the relevant Trigger in order to change view</p>
+          </small>
+          <div class="toolbar">
+            <button id="all" class="button active">All Countries</button>
+            <button id="country" class="button">By Countries</button>
+            <button id="sector" class="button">By Sectors</button>
+            <button id="cap" class="button">By Market Capitalization</button>
+          </div>
+          <div class="clustered-bubble"></div>
+        </section>
+
+        <section data-state="leftHid">
+          <small>
+            <p>Now, we move into Major Companies Analysis – companies with market Capitalization in the Top 100 of the World.</p>
+            <p>Following visualizations show various views and insights into this dataset.
+            </p>
+          </small>
+        </section>
+
+      </section>
+
+      <section data-state="leftVisible">
+        <h5>Major companies TREEMAP</h5>
+        <small>
+          <p class="marginTop"> The below Treemap presents partitioning of the Top (by Market Cap) 100 companies in the dataset, grouped by Sector</p>
+        </small>
+        <div class="treemap"></div>
+      </section>
+
+      <section>
+        <h5>Major companies INTERACTIVE INSIGHTS</h5>
+        <small>
+          <p class="marginTop" style="width: 970px;">
+            The below interactive Donut Chart presents layered view of the Top (by Market Cap) 100 companies in the dataset. The layering
+            is per All > Countries > Sector > Company. For zoom-in click on relevant sector, for zoom-out click on middle
+            area
+          </p>
+        </small>
+        <div class="sunburst"></div>
+      </section>
+      <section>
+        <section data-state="leftVisible">
+          <h5>MAJOR COMPANIES SINGLE DAY VIEW</h5>
+          <small>
+            <p class="marginTop">
+              The below Bubble Chart presents single day trading price changes view of the Top (by Market Cap) 100 companies in the dataset.
+              The X axis shows Market Cap, Y trading price changes and Bubble Size indicates trading Volume. The Bubble internal
+              coloring is by Sector
+            </p>
+          </small>
+          <div class="scatter-chart"></div>
+        </section>
+
+        <section data-state="leftHidden">
+          <h3>Where now?</h3>
+          <small>This was a humble attempt to present various visualizations of financial data. Obviously, we haven't yet visualized
+            a very significant dimension for the stocks - the time; an obvious next step would be finding trends in stock
+            prices and volumes - how those have changed over the years?
+            <br>
+            <br>
+            <br>
+            <br> Please visit
+            <a href="http://finviz.com/">FINVIZ.COM</a> to get impression on various visualizations.</small>
+
+        </section>
+        <section data-state="leftHidden">
+          <h3>Credits & Acknowledgements</h3>
+
+          <small>
+            <ul>
+              <li>
+                <a href="http://finviz.com/">FINVIZ.COM</a> for the Dataset</li>
+              <li>UIUC CS 498 Data Visualization Staff for the theory and the dedicated support</li>
+              <li>UIUC CS 513 Theory and Practice of Data Cleaning Staff for data cleaning principles and practices</li>
+              <li>UIUC IS 531 Data Curation Staff for data curation principles and practices</li>
+              <li>GitHub for hosting support</li>
+            </ul>
+          </small>
+        </section>
+        <section data-state="leftHidden">
+          <small>
+            <h1>CODE DETAILS</h1>
+            <div style="cursor: pointer;">
+              <img src="images/GitHub_Logo.png" style="border: none; background:none; box-shadow:none;">
+            </div>
+            <p>
+              <a href="">Source Code</a>
+            </p>
+
+            <p>Contact:
+              <a href="mailto:rkrasik2@illinois.edu">rkrasik2@illinois.edu</a>
+            </p>
+          </small>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+  <script>
+    // Reveal.getConfig().keyboard = false;
+    Reveal.addEventListener( 'hid', function() {
+      Reveal.configure({
+        keyboard: {
+          39: null
+        }
+      });
+      document.body.className = "";
+      document.body.className += " hid"
+    } );
+    Reveal.addEventListener( 'vis', function() {
+      Reveal.configure({
+        keyboard: {
+          39: 'next'
+        }
+      });
+      document.body.className = "";
+      document.body.className += " vis";
+      } );
+    Reveal.addEventListener( 'leftVisible', function() {
+      Reveal.configure({
+        keyboard: {
+          37: 'prev'
+        }
+      });
+      document.body.className = "";
+      document.body.className += " leftVisible";
+    } );
+    Reveal.addEventListener( 'leftHidden', function() {
+      Reveal.configure({
+        keyboard: {
+          37: null
+        }
+      });
+      document.body.className = "";
+      document.body.className += " leftHidden";
+    } );
+    Reveal.addEventListener( 'leftHid', function() {
+      Reveal.configure({
+        keyboard: {
+          39: 'next',
+          37: null
+        }
+      });
+      document.body.className = "";
+      document.body.className += " leftHid vis";
+    } );
+    Reveal.addEventListener( 'leftVis', function() {
+      Reveal.configure({
+        keyboard: {
+          39: null,
+          37: 'prev'
+        }
+      });
+      document.body.className = "";
+      document.body.className += " leftVis hid";
+		} );
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+      dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        {
+          src: 'lib/js/classList.js',
+          condition: function () {
+            return !document.body.classList;
+          }
+        },
+
+        // Interpret Markdown in <section> elements
+        {
+          src: 'plugin/markdown/marked.js',
+          condition: function () {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+        {
+          src: 'plugin/markdown/markdown.js',
+          condition: function () {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+
+        // Syntax highlight for <code> elements
+        {
+          src: 'plugin/highlight/highlight.js',
+          async: true,
+          callback: function () {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+
+        // Zoom in and out with Alt+click
+        {
+          src: 'plugin/zoom-js/zoom.js',
+          async: true
+        },
+
+        // Speaker notes
+        {
+          src: 'plugin/notes/notes.js',
+          async: true
+        },
+
+        // MathJax
+        {
+          src: 'plugin/math/math.js',
+          async: true
+        }
+      ]
+    });
+    
+  </script>
+
+  <script>
+  //   Reveal.slide(0);
+  //     Reveal.addEventListener('slidechanged', function( event ) {
+  //     document.body.className = "";
+  //     document.body.className += " " + event.currentSlide.dataset.state;
+  //     // console.log(event.currentSlide.dataset.state);
+	// // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+  //   });
+
+    Reveal.addEventListener( 'hid', function() {
+      console.log(document.body);
+      document.body.className = "";
+      document.body.className += " hid";
+    } );
+    Reveal.addEventListener( 'vis', function() {
+      document.body.className = "";
+      document.body.className += " vis";
+      } );
+    Reveal.addEventListener( 'leftVisible', function() {
+      document.body.className = "";
+      document.body.className += " leftVisible";
+    } );
+    Reveal.addEventListener( 'leftHidden', function() {
+      document.body.className = "";
+      document.body.className += " leftHidden";
+    } );
+    Reveal.addEventListener( 'leftHid', function() {
+      document.body.className = "";
+      document.body.className += " leftHid vis";
+    } );
+    Reveal.addEventListener( 'leftVis', function() {
+      document.body.className = "";
+      document.body.className += " leftVis hid";
+		} );
+  </script>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="scripts/tooltip.js"></script>
+  <script src="scripts/legend.js"></script>
+  <script src="scripts/bubbleChart.js"></script>
+  <script src="scripts/barChart.js"></script>
+  <script src="scripts/clusteredBubbleChart.js"></script>
+  <script src="scripts/treeMap.js"></script>
+  <script src="scripts/sunburst.js"></script>
+  <script src="scripts/scatterChart.js"></script>
+  <script src="scripts/app.js"></script>
+
+</body>
+
+</html>

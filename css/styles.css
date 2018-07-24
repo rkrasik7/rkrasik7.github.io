@@ -1,0 +1,236 @@
+svg {
+  font: 10px sans-serif;
+}
+
+.axis text {
+  font: 10px Verdana;
+}
+
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke: none;
+  stroke-width: 0;
+}
+
+.sunburst path {
+  stroke: #fff;
+  cursor: pointer;
+}
+
+.cir:hover {
+  cursor: pointer;
+  stroke: black !important;
+  fill-opacity: 0.8 !important;
+}
+
+/* BAR */
+
+svg g.y-axis,
+svg g.x-axis {
+  font-size: 0.7rem;
+}
+
+svg g.y-axis .domain,
+svg g.x-axis .domain,
+svg g>line {
+  stroke: #222;
+  /* shape-rendering: crispedges; */
+  stroke-opacity: 0.2;
+  stroke-width: 0.5;
+}
+
+svg .title {
+  font-size: 0.9rem;
+}
+
+svg .label {
+  font-size: 0.7rem;
+}
+
+.bar-chart {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 100%;
+}
+
+.bar-chart>svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.bar-chart .bar {
+  fill: #b17ba2;
+  stroke: #9d5c8b;
+  stroke-width: 1;
+}
+
+.bar-chart .bar:hover {
+  fill: #75b9b4;
+  stroke: #53a6a0;
+  cursor: pointer;
+  stroke-width: 1;
+}
+
+.bubble-chart .circles .leaf:hover text {
+  cursor: pointer;
+}
+
+.bubble-chart text {
+  fill: #ffffff;
+}
+
+.bubble-chart .leaf circle {
+  cursor: pointer;
+  /* fill: hsl(211, 37%, 48%); */
+  fill: #75b9b4;
+  stroke: #53a6a0;
+}
+
+.bubble-chart .leaf:hover circle {
+  fill: #b17ba2;
+  stroke: #9d5c8b;
+}
+
+/* ================== */
+
+.button {
+  width: 165px;
+  padding: 4px 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+  outline: none;
+}
+
+.button.active {
+  background: #aaa;
+  color: #fff;
+}
+
+.clustered-bubble {
+  margin-bottom: 10px;
+}
+
+.toolbar {
+  margin-top: -20px;
+}
+
+.tooltip {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #000;
+  background: #fff;
+  opacity: .9;
+  color: black;
+  padding: 10px;
+  /* width: 300px; */
+  font-size: 12px;
+  z-index: 10;
+  transition: opacity 0.3s linear;
+}
+
+.tooltip .title {
+  font-size: 13px;
+}
+
+.tooltip .name {
+  font-weight: bold;
+}
+
+/* treemap */
+
+small p.marginTop {
+  margin: 0 0 0px 0;
+  font-style: italic;
+}
+
+small.treeW {
+  width: 660px;
+}
+
+small.sunW {
+  width: 850px;
+}
+
+/* sunburst */
+
+.marginLeft {
+  margin-left: 160px;
+}
+
+h5.content-title {
+  margin-bottom: 0;
+}
+
+div.content-subtitle {
+  font-weight: 300;
+  font-size: .45em;
+  line-height: 1.875rem;
+  text-align: left;
+}
+
+table {
+  font-style: italic !important;
+  width: 101%;
+}
+
+table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+table tbody tr {
+  height: 30px;
+}
+
+table tbody tr td {
+  border: none !important;
+  padding-left: 10px;
+}
+
+.less-font {
+  font-size: .35em !important;
+}
+
+.less-font p {
+  margin-top: 5px;
+}
+
+.hid .reveal .controls .navigate-right {
+  visibility: hidden;
+}
+
+.vis .reveal .controls .navigate-right {
+  visibility: visible;
+}
+
+.leftVisible .reveal .controls .navigate-left {
+  visibility: visible;
+}
+
+.leftHidden .reveal .controls .navigate-left {
+  visibility: hidden;
+}
+
+.leftHid .reveal .controls .navigate-left {
+  visibility: hidden;
+}
+
+.leftVis .reveal .controls .navigate-left {
+  visibility: visible;
+}
