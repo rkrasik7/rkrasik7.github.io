@@ -140,7 +140,7 @@
           </small>
         </section>
 
-        <section data-state="vis">
+        <section>
           <h5 style="margin-bottom: 0;">THE DATASET</h5>
           <small class="less-font">
             <ol>
@@ -198,7 +198,7 @@
               <p class="fragment" data-fragment-index="7">
                 The difference, in %, between current close and previous close price.
               </p>
-              <li class="fragment" data-fragment-index="8">
+              <li class="fragment" data-fragment-index="8" data-state="lastRight">
                 <strong>Volume</strong>
               </li>
               <p class="fragment" data-fragment-index="8">
@@ -220,8 +220,8 @@
         <div class="bubble-chart"></div>
       </section>
 
-      <section data-state="hid">
-        <section>
+      <section>
+        <section data-state="leftVis">
           <h5>WORLD VIEW - MARKET CAPITALIZATION BY SECTOR</h5>
           <small>
             <p class="marginTop" style="width: 1160px; margin-left: -100px;">The below Bar Chart presents summary of Market Capitalization of all the companies in the dataset, grouped by the
@@ -250,7 +250,7 @@
         <section data-state="leftVis">
           <h5>Interactive Analysis of the World</h5>
           <small>
-            <p class="marginTop" style="width: 1070px;margin-left: -50px;">The below interactive Bubble Chart presents various views of the Top 1000 companies (by Market Cap) in the dataset – all (default), by Country, by Sector and by Market Capitalization range. Please use the relevant Trigger in order to change view</p>
+            <p class="marginTop" style="width: 1070px;margin-left: -50px;">The below interactive Bubble Chart presents various views of 1000 companies in the dataset – all (default), by Country, by Sector and by Market Capitalization range. Please use the relevant Trigger in order to change view</p>
           </small>
           <div class="toolbar">
             <button id="all" class="button active">All Countries</button>
@@ -478,32 +478,32 @@
   //     // console.log(event.currentSlide.dataset.state);
 	// // event.previousSlide, event.currentSlide, event.indexh, event.indexv
   //   });
+    
+    Reveal.addEventListener( 'fragmentshown', function( event ) {
+      if (event.fragment.dataset.state == 'lastRight') {
+        Reveal.configure({
+          keyboard: {
+            39: 'next',
+            37: null
+          }
+        });
+        document.body.className = "";
+        document.body.className += " vis";
+      }
+    } );
 
-    Reveal.addEventListener( 'hid', function() {
-      console.log(document.body);
-      document.body.className = "";
-      document.body.className += " hid";
+    Reveal.addEventListener( 'fragmenthidden', function( event ) {
+      if (event.fragment.dataset.state == 'lastRight') {
+        Reveal.configure({
+          keyboard: {
+            39: null,
+            37: null
+          }
+        });
+        document.body.className = "";
+        document.body.className = " hid";
+      }
     } );
-    Reveal.addEventListener( 'vis', function() {
-      document.body.className = "";
-      document.body.className += " vis";
-      } );
-    Reveal.addEventListener( 'leftVisible', function() {
-      document.body.className = "";
-      document.body.className += " leftVisible";
-    } );
-    Reveal.addEventListener( 'leftHidden', function() {
-      document.body.className = "";
-      document.body.className += " leftHidden";
-    } );
-    Reveal.addEventListener( 'leftHid', function() {
-      document.body.className = "";
-      document.body.className += " leftHid vis";
-    } );
-    Reveal.addEventListener( 'leftVis', function() {
-      document.body.className = "";
-      document.body.className += " leftVis hid";
-		} );
   </script>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
