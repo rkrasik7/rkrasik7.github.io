@@ -1,5 +1,7 @@
-# THRILLING FINANCIAL INSIGHTS  
-# A SHORT JOURNEY TO WORLD STOCK MARKET  
+# Project Web: https://rkrasik7.github.io/index.html  
+
+THRILLING FINANCIAL INSIGHTS  
+A SHORT JOURNEY TO WORLD STOCK MARKET  
 Author: Ron Krasik	rkrasik2@illinois.edu   
 CS 498: Data Visualization	Summer 2018  
 University of Illinois at Urbana-Champaign (UIUC)  
