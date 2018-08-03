@@ -2,8 +2,8 @@
 
 THRILLING FINANCIAL INSIGHTS  
 A SHORT JOURNEY TO WORLD STOCK MARKET  
-Author: Ron Krasik	rkrasik2@illinois.edu   
-CS 498: Data Visualization	Summer 2018  
+Final Project                 Author: Ron Krasik  rkrasik2@illinois.edu   
+CS 498: Data Visualization	  Summer 2018  
 University of Illinois at Urbana-Champaign (UIUC)  
 
 This, d3.js (v4) final project, part of CS 498 Data Visualization course in UUIC, uses a hybrid approach of an Interactive Slideshow in order to narrate the visual story of Financial Market dataset from FINVIZ.COM. The Interactive Slideshow takes the user throughout the July-09 2018 single trading day, from high-level to low-level details.
